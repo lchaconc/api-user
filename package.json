@@ -1,0 +1,28 @@
+{
+  "name": "api-user",
+  "version": "1.0.0",
+  "description": "Ejemplo de crear cuenta y login en node js mediante express, bcrypt,  JWT, mongoose, entre otras....",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lchaconc/api-user.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lchaconc/api-user/issues"
+  },
+  "homepage": "https://github.com/lchaconc/api-user#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
