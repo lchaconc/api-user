@@ -1,6 +1,9 @@
 const express = require("express");
 const usuariosRouter = require("./routes/user.routes");
+const conexionDB = require("./db.conexion");
 const app = express();
+
+conexionDB();
 
 // settings
 app.set("name", "API users");
