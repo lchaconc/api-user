@@ -1,7 +1,7 @@
-POST http://localhost:3500/usuarios
+POST http://localhost:3500/usuarios/crear-cuenta
 Content-Type: application/json
 
 {
-    "correo": "pepito@correo.de",
+    "correo": "luis.chacon.campos@mep.go.cr",
     "clave": "123"
 }
