@@ -9,6 +9,10 @@ const usuarioSchema = new Schema ({
     clave : {
         type: String,
         require: true
+    },
+    activo: {
+        type: Boolean,
+        default: false
     }
 });
 

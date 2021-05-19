@@ -5,6 +5,6 @@ const routerUsuario = Router();
 routerUsuario.post("/crear-cuenta", ctrUsuario.crearCuenta);
 
 
-routerUsuario.get("/activar-cuenta/:token", ctrUsuario.activarCuenta);
+routerUsuario.get("/activar-cuenta/", ctrUsuario.activarCuenta);
 
 module.exports = routerUsuario;
