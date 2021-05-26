@@ -9,7 +9,7 @@ exports.crearCuenta = async (req, res) => {
 
   const hashed = await bcrypt.hash(clave, saltRounds);
   const nuevoUsuario = new Usuario({ clave: hashed, correo });
-  console.log(nuevoUsuario);
+  console.log("nuevoUsuario:", nuevoUsuario);
   await nuevoUsuario.save();
   const TOKEN_DATA = {
     _id: nuevoUsuario._id,
@@ -57,3 +57,10 @@ exports.activarCuenta = async (req, res) => {
 
  
 };
+
+exports.iniciarSesion = async (req, res) => {
+  const {correo, clave} = req.body;
+  const encontrado = await Usuario.findOne({correo});
+  console.log(encontrado, encontrado);
+  res.json({isOk:true});
+}

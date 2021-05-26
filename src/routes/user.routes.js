@@ -4,6 +4,8 @@ const routerUsuario = Router();
 
 routerUsuario.post("/crear-cuenta", ctrUsuario.crearCuenta);
 
+routerUsuario.post("/iniciar-sesion", ctrUsuario.iniciarSesion);
+
 
 routerUsuario.get("/activar-cuenta/", ctrUsuario.activarCuenta);
 

@@ -1,4 +1,14 @@
+
 POST http://localhost:3500/usuarios/crear-cuenta
+Content-Type: application/json
+
+{
+    "correo": "profeluischc@gmail.com",
+    "clave": "123"
+}
+
+### Login
+POST http://localhost:3500/usuarios/iniciar-sesion
 Content-Type: application/json
 
 {
