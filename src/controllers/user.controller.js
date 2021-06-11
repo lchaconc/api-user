@@ -54,13 +54,32 @@ exports.activarCuenta = async (req, res) => {
     <strong> No se encuentra el usuario para activar </strong>        
     `);
   }
-
- 
 };
 
 exports.iniciarSesion = async (req, res) => {
-  const {correo, clave} = req.body;
-  const encontrado = await Usuario.findOne({correo});
+  const { correo, clave } = req.body;
+  const encontrado = await Usuario.findOne({ correo });
   console.log(encontrado, encontrado);
-  res.json({isOk:true});
+if (encontrado) {
+  if (await bcrypt.compare (clave, encontrado.clave)  ) {
+    
+    const TOKEN_DATA = {
+      _id: encontrado._id,
+      correo: encontrado.correo,
+    };
+    const TOKEN_CONFIG = {
+      expiresIn: "1h",
+    };
+    const token = jwt.sign(TOKEN_DATA, process.env.SECRET, TOKEN_CONFIG);
+
+    res.json({ isOk: true,  token });
+  } else {
+    res.json({isOk:false, msj: "Clave o correo incorrectos"})
+  }
+} else {
+  res.json({isOk:false, msj: "Clave o correo incorrectos"})
 }
+  
+ 
+
+};
