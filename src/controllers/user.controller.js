@@ -5,7 +5,13 @@ const mailer = require("../mailer");
 const saltRounds = 10;
 
 exports.crearCuenta = async (req, res) => {
-  const { correo, clave } = req.body;
+  const { correo, clave, confirma } = req.body;
+
+  if (clave != confirma) {
+    return res.json ({
+      isOk: false, 
+      msj: "La contraseña y su confirmación no coinciden"})
+  }
 
   const hashed = await bcrypt.hash(clave, saltRounds);
   const nuevoUsuario = new Usuario({ clave: hashed, correo });

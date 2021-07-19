@@ -4,7 +4,8 @@ Content-Type: application/json
 
 {
     "correo": "profeluischc@gmail.com",
-    "clave": "123"
+    "clave": "123",
+    "confirma": "123"
 }
 
 ### Login
@@ -13,5 +14,5 @@ Content-Type: application/json
 
 {
     "correo": "profeluischc@gmail.com",
-    "clave": "1237"
+    "clave": "123"
 }
